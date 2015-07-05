@@ -14,8 +14,8 @@ npm i react-sonic
 import React from 'react'
 import {ReactSonic, ReactArcSonic} from 'react-sonic'
 
-<ReactSonic fillColor="#FF0000" width=50 height=50 />
-<ReactArcSonic fillColor="#FF00FF" width=50 height=50 />
+<ReactSonic fillColor="#FF0000" width="50" height="50" />
+<ReactArcSonic fillColor="#FF00FF" width="50" height="50" />
 
 ```
 

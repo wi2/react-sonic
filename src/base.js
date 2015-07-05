@@ -13,24 +13,26 @@ export class ReactSonic extends React.Component {
     ];
   }
   componentDidMount() {
-    const square = new Sonic({
-      width: this.width,
-      height: this.height,
-      stepsPerFrame: this.props.stepsPerFrame||4,
-      trailLength: this.props.trailLength||0.6,
-      pointDistance: this.props.pointDistance||0.01,
-      fps: this.props.fps||20,
-      backgroundColor: this.props.backgroundColor||'#272822',
-      fillColor: this.props.fillColor||'#AAA',
-      path: this.path||null,
-      step: this.step||null,
-      setup: this.setup||null
-    });
-    this.refs.loader.getDOMNode().appendChild(square.canvas);
-    square.play();
+    if (typeof Sonic !== 'undefined'){
+      const square = new Sonic({
+        width: this.width,
+        height: this.height,
+        stepsPerFrame: this.props.stepsPerFrame||4,
+        trailLength: this.props.trailLength||0.6,
+        pointDistance: this.props.pointDistance||0.01,
+        fps: this.props.fps||20,
+        backgroundColor: this.props.backgroundColor||'#272822',
+        fillColor: this.props.fillColor||'#AAA',
+        path: this.path||null,
+        step: this.step||null,
+        setup: this.setup||null
+      });
+      this.refs.loader.getDOMNode().appendChild(square.canvas);
+      square.play();
+    }
   }
   render() {
-    return <div ref="loader" className={this.props.className||''} title={this.props.title||''} />
+    return <div ref="loader" className={this.props.className||'loader'} title={this.props.title||''} />
   }
 }
 
