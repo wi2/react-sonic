@@ -8,5 +8,4 @@ branches:
     - master
 
 before_install:
-  - npm update -g npm
-  - npm install -g babel
+  - npm update -g npm babel
